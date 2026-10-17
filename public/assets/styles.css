@@ -171,7 +171,7 @@ p { margin: 0 0 1em; }
 .section-warm { background: var(--warm); }
 .checklist.big li { padding: 9px 0 9px 32px; font-size: 1.05rem; }
 .founders { background: #fff; border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); border-top: 5px solid var(--accent); }
-.founders-kicker { font-family: var(--font-display); font-size: 2.6rem; font-weight: 800; color: var(--brand); letter-spacing: .08em; margin: 0; line-height: 1; }
+.founders-kicker { font-family: var(--font-display); font-size: 2.6rem; font-weight: 800; color: var(--brand); letter-spacing: -.02em; margin: 0 0 6px; line-height: 1; }
 .founders-lead { color: var(--muted); }
 .monograms { list-style: none; padding: 0; margin: 18px 0; display: grid; gap: 12px; }
 .monograms li { display: flex; align-items: center; gap: 14px; }
