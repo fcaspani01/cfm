@@ -5,6 +5,20 @@
     a.addEventListener('click', function () { if (toggle) toggle.checked = false; });
   });
 
+  // Display della caldaia: la temperatura sale fino al valore finale
+  var temp = document.querySelector('.hi-temp');
+  if (temp && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var to = parseInt(temp.dataset.to, 10), from = 20, t0 = null;
+    var step = function (ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min((ts - t0) / 1800, 1), eased = 1 - Math.pow(1 - p, 3);
+      temp.textContent = Math.round(from + (to - from) * eased) + '°';
+      if (p < 1) requestAnimationFrame(step);
+    };
+    temp.textContent = from + '°';
+    setTimeout(function () { requestAnimationFrame(step); }, 600);
+  }
+
   var form = document.getElementById('richiesta-form');
   if (!form) return;
   form.addEventListener('submit', function (e) {

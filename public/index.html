@@ -105,13 +105,13 @@
 
   <!-- alone caldo e cerchio di fondo -->
   <circle cx="270" cy="230" r="215" fill="#ffffff" opacity=".06"/>
-  <circle cx="270" cy="230" r="160" fill="url(#hi-glow)"/>
+  <circle class="hi-glow" cx="270" cy="230" r="160" fill="url(#hi-glow)"/>
 
   <!-- onde di calore -->
   <g fill="none" stroke="#ffb27f" stroke-width="4" stroke-linecap="round" opacity=".75">
-    <path d="M228 58c-8-10 8-18 0-28s8-18 0-28"/>
-    <path d="M270 52c-8-10 8-18 0-28s8-18 0-28" opacity=".7"/>
-    <path d="M312 58c-8-10 8-18 0-28s8-18 0-28"/>
+    <path class="hi-wave" d="M228 58c-8-10 8-18 0-28s8-18 0-28"/>
+    <path class="hi-wave hi-d2" d="M270 52c-8-10 8-18 0-28s8-18 0-28"/>
+    <path class="hi-wave hi-d3" d="M312 58c-8-10 8-18 0-28s8-18 0-28"/>
   </g>
 
   <!-- tubi in rame -->
@@ -120,6 +120,10 @@
     <rect x="237" y="352" width="12" height="96" rx="4"/>
     <rect x="291" y="352" width="12" height="96" rx="4"/>
     <rect x="321" y="352" width="12" height="78" rx="4"/>
+  </g>
+  <g class="hi-flow" stroke="#ffd2b0" stroke-width="3" stroke-linecap="round" stroke-dasharray="3 11">
+    <line x1="243" y1="356" x2="243" y2="444"/>
+    <line x1="297" y1="444" x2="297" y2="356"/>
   </g>
   <g fill="#0f2a2e">
     <rect x="201" y="380" width="24" height="12" rx="3"/>
@@ -139,39 +143,39 @@
   <!-- oblò fiamma -->
   <circle cx="270" cy="186" r="50" fill="#0f2a2e"/>
   <circle cx="270" cy="186" r="50" fill="none" stroke="#c9d8d4" stroke-width="5"/>
-  <path d="M270 146c6 16-14 22-14 40 0 8 4 14 10 17-3-9 4-15 10-20 2 10 13 13 13 25a19 19 0 0 1-38 0c0-26 19-34 19-62z" fill="url(#hi-flame)" transform="translate(2 -4)"/>
-  <path d="M271 196c5 6 9 10 9 16a9 9 0 0 1-18 0c0-6 5-10 9-16z" fill="#ffe7b3"/>
+  <g transform="translate(2 -4)"><path class="hi-flame" d="M270 146c6 16-14 22-14 40 0 8 4 14 10 17-3-9 4-15 10-20 2 10 13 13 13 25a19 19 0 0 1-38 0c0-26 19-34 19-62z" fill="url(#hi-flame)"/></g>
+  <path class="hi-flame-core" d="M271 196c5 6 9 10 9 16a9 9 0 0 1-18 0c0-6 5-10 9-16z" fill="#ffe7b3"/>
 
   <!-- display -->
   <rect x="204" y="262" width="132" height="54" rx="12" fill="#0f2a2e"/>
-  <text x="222" y="298" font-size="26" font-weight="800" fill="#7fe0cf" class="f-display">55°</text>
-  <circle cx="300" cy="289" r="9" fill="#e8611a"/>
+  <text x="222" y="298" font-size="26" font-weight="800" fill="#7fe0cf" class="f-display hi-temp" data-to="55">55°</text>
+  <circle class="hi-led" cx="300" cy="289" r="9" fill="#e8611a"/>
   <circle cx="322" cy="289" r="5" fill="#7fe0cf" opacity=".6"/>
   <circle cx="232" cy="336" r="7" fill="#c9d8d4"/>
   <circle cx="270" cy="336" r="7" fill="#c9d8d4"/>
   <circle cx="308" cy="336" r="7" fill="#c9d8d4"/>
 
   <!-- badge 40 anni -->
-  <g transform="translate(18 120) rotate(-6)">
+  <g class="hi-float"><g transform="translate(18 120) rotate(-6)">
     <rect width="148" height="78" rx="16" fill="#ffffff"/>
     <text x="16" y="44" font-size="36" font-weight="800" fill="#e8611a" class="f-display">40+</text>
     <text x="16" y="64" font-size="13" font-weight="600" fill="#13222b">anni di esperienza</text>
-  </g>
+  </g></g>
 
   <!-- badge specialisti -->
-  <g transform="translate(352 300) rotate(4)">
+  <g class="hi-float hi-d2"><g transform="translate(352 300) rotate(4)">
     <rect width="156" height="62" rx="16" fill="#ffffff"/>
     <circle cx="30" cy="31" r="16" fill="#e3f1ee"/>
     <path d="M22 31l6 6 11-12" fill="none" stroke="#0b4f49" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
     <text x="54" y="28" font-size="13" font-weight="800" fill="#0b4f49">Specialisti</text>
     <text x="54" y="45" font-size="13" font-weight="600" fill="#13222b">Vaillant</text>
-  </g>
+  </g></g>
 
   <!-- chiave inglese -->
-  <g transform="translate(400 150) rotate(35)">
+  <g class="hi-wrench"><g transform="translate(400 150) rotate(35)">
     <rect x="-7" y="0" width="14" height="88" rx="7" fill="#c9d8d4"/>
     <path d="M0 -30a22 22 0 1 0 0 44a22 22 0 1 0 0-44zm-7 6h14v18h-14z" fill="#c9d8d4" fill-rule="evenodd"/>
-  </g>
+  </g></g>
 </svg></div>
   </div>
   <div class="hero-skyline"><svg class="skyline" viewBox="0 0 1440 170" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
