@@ -11,7 +11,9 @@ import datetime
 import html
 import json
 import re
+import os
 import shutil
+from urllib.parse import urlparse
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -19,8 +21,9 @@ SRC = ROOT / "src"
 OUT = ROOT / "public"
 
 SITE = {
-    # TODO: sostituire con il dominio definitivo prima della messa online
-    "url": "https://www.cfmassistenzacaldaie.it",
+    # URL pubblico del sito, senza "/" finale. Ora è GitHub Pages; con un dominio proprio
+    # basta cambiarlo qui (o con la variabile d'ambiente SITE_URL) e rigenerare.
+    "url": os.environ.get("SITE_URL", "https://fcaspani01.github.io/cfm").rstrip("/"),
     "name": "CFM Centro Assistenza Caldaie Vaillant Verona",
     "short_name": "CFM Assistenza Caldaie",
     "legal_name": "CFM S.n.c. di Caspani M., Faustini G., Mirandola R.",
@@ -66,6 +69,16 @@ NAV = [
     ("/faq/", "FAQ"),
     ("/contatti/", "Contatti"),
 ]
+
+# Sottopercorso del sito (es. "/cfm" su GitHub Pages), ricavato dall'URL
+BASE = urlparse(SITE["url"]).path.rstrip("/")
+ROOT_LINK_RE = re.compile(r'((?:href|src|action)=")/(?!/)')
+
+
+def with_base(text):
+    """Antepone BASE ai link che iniziano con "/" (no-op se il sito è alla radice del dominio)."""
+    return ROOT_LINK_RE.sub(lambda m: m.group(1) + BASE + "/", text) if BASE else text
+
 
 META_RE = re.compile(r"^\s*<!--meta\s*(\{.*?\})\s*-->", re.S)
 
@@ -246,7 +259,7 @@ def render_page(meta, body, layout):
     page = page.replace("{{JSONLD}}", ld)
     page = page.replace("{{NAV}}", render_nav(path))
     page = page.replace("{{CONTENT}}", body)
-    return fill(page)
+    return with_base(fill(page))
 
 
 def html_to_text(body):
@@ -297,7 +310,11 @@ def main():
     for name in ("robots.txt", "llms.txt", "_headers", "site.webmanifest"):
         p = SRC / name
         if p.exists():
-            (OUT / name).write_text(fill(p.read_text(encoding="utf-8")), encoding="utf-8")
+            text = fill(p.read_text(encoding="utf-8"))
+            if name == "site.webmanifest" and BASE:
+                text = re.sub(r'": "/', '": "' + BASE + "/", text)
+            (OUT / name).write_text(text, encoding="utf-8")
+    (OUT / ".nojekyll").write_text("", encoding="utf-8")
 
     today = datetime.date.today().isoformat()
     indexable = [m for m, _ in pages if "noindex" not in m.get("robots", "")]

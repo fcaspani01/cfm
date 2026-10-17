@@ -32,4 +32,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://www.cfmassistenzacaldaie.it/sitemap.xml
+Sitemap: https://fcaspani01.github.io/cfm/sitemap.xml

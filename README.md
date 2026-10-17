@@ -60,7 +60,7 @@ Già implementato:
 
 Dati che non è stato possibile verificare dalle fonti pubbliche (vanno confermati dai titolari):
 
-- [ ] **Dominio** definitivo (`SITE["url"]` in `build.py`, ora è un segnaposto)
+- [ ] **Dominio** proprio (ora il sito è su `fcaspani01.github.io/cfm`, vedi Pubblicazione)
 - [ ] **Partita IVA** (`SITE["vat"]`, obbligatoria nel footer)
 - [ ] **Orari**: le directory online riportano dati discordanti (07:30–18:30 vs 08:30–20:30)
 - [ ] **Email**: `cfmsnc1@virgilio.it` è quella presente nelle directory; meglio un indirizzo sul dominio
@@ -86,6 +86,16 @@ Dati che non è stato possibile verificare dalle fonti pubbliche (vanno conferma
 
 ## Pubblicazione
 
-Funziona su qualsiasi hosting statico. Consigliati (gratuiti, HTTPS incluso):
-**Cloudflare Pages** o **Netlify** → cartella di pubblicazione `public`, comando di build
-`python3 build.py`. Il file `_headers` imposta cache e header di sicurezza.
+Il sito è pubblicato su **GitHub Pages**: https://fcaspani01.github.io/cfm/
+
+A ogni push su `main` il workflow `.github/workflows/pages.yml` esegue `build.py` e
+pubblica `public/` sul branch `gh-pages`. Impostazione richiesta (una volta sola):
+*Settings → Pages → Build and deployment → Source: Deploy from a branch → `gh-pages` / `(root)`*.
+
+**Dominio proprio** (consigliato per SEO e LLM: `robots.txt` e `llms.txt` vengono letti solo
+alla radice del dominio, non in `/cfm/`):
+1. cambiare `SITE["url"]` in `build.py` con il nuovo dominio (es. `https://www.cfmcaldaie.it`);
+2. impostare il dominio in *Settings → Pages → Custom domain*;
+3. creare presso il registrar un record `CNAME www → fcaspani01.github.io`.
+
+I link interni si adattano automaticamente al sottopercorso ricavato da `SITE["url"]`.

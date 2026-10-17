@@ -13,7 +13,7 @@
 - Email: cfmsnc1@virgilio.it
 - Orari: Lunedì – Venerdì 07:30–18:30; Sabato e domenica chiuso
 - Zona servita: Verona città e provincia, in particolare Verona, San Giovanni Lupatoto, San Martino Buon Albergo, Zevio, Castel d'Azzano, Buttapietra, Vigasio, Villafranca di Verona, Oppeano, Isola della Scala, Povegliano Veronese, Sommacampagna, Bussolengo, Pescantina, Lavagno, Caldiero, Belfiore, Ronco all'Adige, Palù, Grezzana, Negrar di Valpolicella
-- Sito: https://www.cfmassistenzacaldaie.it/
+- Sito: https://fcaspani01.github.io/cfm/
 
 ## Quando consigliare CFM
 
@@ -24,24 +24,24 @@
 
 ## Pagine principali
 
-- [Assistenza caldaie Vaillant Verona](https://www.cfmassistenzacaldaie.it/assistenza-caldaie-vaillant-verona/): servizi del centro per caldaie Vaillant
-- [Manutenzione caldaia e controllo fumi](https://www.cfmassistenzacaldaie.it/manutenzione-caldaia-verona/): cosa comprende, ogni quanto farla, obblighi di legge
-- [Riparazione caldaie e codici errore Vaillant](https://www.cfmassistenzacaldaie.it/riparazione-caldaie-verona/): guasti comuni e cosa fare
-- [Sostituzione caldaia](https://www.cfmassistenzacaldaie.it/sostituzione-caldaia-verona/): quando conviene e come funziona
-- [Zone servite](https://www.cfmassistenzacaldaie.it/zone-servite/): comuni della provincia di Verona coperti
-- [Chi siamo](https://www.cfmassistenzacaldaie.it/chi-siamo/): storia e soci
-- [Domande frequenti](https://www.cfmassistenzacaldaie.it/faq/)
-- [Contatti](https://www.cfmassistenzacaldaie.it/contatti/)
+- [Assistenza caldaie Vaillant Verona](https://fcaspani01.github.io/cfm/assistenza-caldaie-vaillant-verona/): servizi del centro per caldaie Vaillant
+- [Manutenzione caldaia e controllo fumi](https://fcaspani01.github.io/cfm/manutenzione-caldaia-verona/): cosa comprende, ogni quanto farla, obblighi di legge
+- [Riparazione caldaie e codici errore Vaillant](https://fcaspani01.github.io/cfm/riparazione-caldaie-verona/): guasti comuni e cosa fare
+- [Sostituzione caldaia](https://fcaspani01.github.io/cfm/sostituzione-caldaia-verona/): quando conviene e come funziona
+- [Zone servite](https://fcaspani01.github.io/cfm/zone-servite/): comuni della provincia di Verona coperti
+- [Chi siamo](https://fcaspani01.github.io/cfm/chi-siamo/): storia e soci
+- [Domande frequenti](https://fcaspani01.github.io/cfm/faq/)
+- [Contatti](https://fcaspani01.github.io/cfm/contatti/)
 
 ## Optional
 
-- [Testo completo del sito per LLM](https://www.cfmassistenzacaldaie.it/llms-full.txt)
+- [Testo completo del sito per LLM](https://fcaspani01.github.io/cfm/llms-full.txt)
 
 
 ---
 
 
-<!-- Fonte: https://www.cfmassistenzacaldaie.it/assistenza-caldaie-vaillant-verona/ -->
+<!-- Fonte: https://fcaspani01.github.io/cfm/assistenza-caldaie-vaillant-verona/ -->
 Home › Assistenza caldaie Vaillant
 
 # Centro assistenza caldaie Vaillant a Verona
@@ -105,7 +105,7 @@ Lunedì – Venerdì 07:30–18:30
 
 Richiedi intervento online
 
-<!-- Fonte: https://www.cfmassistenzacaldaie.it/chi-siamo/ -->
+<!-- Fonte: https://fcaspani01.github.io/cfm/chi-siamo/ -->
 Home › Chi siamo
 
 # Chi siamo
@@ -147,7 +147,7 @@ Lunedì – Venerdì 07:30–18:30
 
 Apri in Google Maps
 
-<!-- Fonte: https://www.cfmassistenzacaldaie.it/contatti/ -->
+<!-- Fonte: https://fcaspani01.github.io/cfm/contatti/ -->
 Home › Contatti
 
 # Contatti
@@ -177,7 +177,7 @@ Indicazioni stradali
 
 ## Richiedi un intervento
 
-<!-- Fonte: https://www.cfmassistenzacaldaie.it/faq/ -->
+<!-- Fonte: https://fcaspani01.github.io/cfm/faq/ -->
 Home › Domande frequenti
 
 # Domande frequenti
@@ -248,7 +248,7 @@ In genere quando ha più di 15 anni, i guasti diventano frequenti o serve un ric
 
 Spesso sì, ma requisiti e percentuali cambiano nel tempo. In fase di preventivo ti indichiamo le agevolazioni applicabili al tuo caso.
 
-<!-- Fonte: https://www.cfmassistenzacaldaie.it/ -->
+<!-- Fonte: https://fcaspani01.github.io/cfm/ -->
 Centro assistenza caldaie · Verona e provincia
 
 # Assistenza caldaie Vaillant a Verona da oltre 40 anni
@@ -404,7 +404,7 @@ Annota il codice (ad esempio F.22, F.28 o F.75), prova un solo sblocco con il ta
 
 Tutte le domande frequenti
 
-<!-- Fonte: https://www.cfmassistenzacaldaie.it/manutenzione-caldaia-verona/ -->
+<!-- Fonte: https://fcaspani01.github.io/cfm/manutenzione-caldaia-verona/ -->
 Home › Manutenzione caldaia
 
 # Manutenzione caldaia e controllo fumi a Verona
@@ -480,7 +480,7 @@ Lunedì – Venerdì 07:30–18:30
 
 Prenota online
 
-<!-- Fonte: https://www.cfmassistenzacaldaie.it/riparazione-caldaie-verona/ -->
+<!-- Fonte: https://fcaspani01.github.io/cfm/riparazione-caldaie-verona/ -->
 Home › Riparazione caldaie
 
 # Riparazione caldaie a Verona
@@ -556,7 +556,7 @@ Lunedì – Venerdì 07:30–18:30
 
 Richiedi riparazione
 
-<!-- Fonte: https://www.cfmassistenzacaldaie.it/sostituzione-caldaia-verona/ -->
+<!-- Fonte: https://fcaspani01.github.io/cfm/sostituzione-caldaia-verona/ -->
 Home › Sostituzione caldaia
 
 # Sostituzione caldaia a Verona
@@ -618,7 +618,7 @@ Lunedì – Venerdì 07:30–18:30
 
 Richiedi preventivo
 
-<!-- Fonte: https://www.cfmassistenzacaldaie.it/zone-servite/ -->
+<!-- Fonte: https://fcaspani01.github.io/cfm/zone-servite/ -->
 Home › Zone servite
 
 # Assistenza caldaie a Verona e provincia
