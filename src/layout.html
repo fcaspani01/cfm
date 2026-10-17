@@ -24,6 +24,7 @@
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary">
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/styles.css">
 {{JSONLD}}
 </head>
@@ -32,9 +33,9 @@
 
 <div class="topbar">
   <div class="wrap topbar-in">
-    <span>📍 {{ADDRESS}}</span>
-    <span class="hide-sm">🕑 {{HOURS}}</span>
-    <a href="mailto:{{EMAIL}}" class="hide-sm">✉ {{EMAIL}}</a>
+    <span>{{ICON:map-pin}} {{ADDRESS}}</span>
+    <span class="hide-sm">{{ICON:clock}} {{HOURS}}</span>
+    <a href="mailto:{{EMAIL}}" class="hide-sm">{{ICON:mail}} {{EMAIL}}</a>
   </div>
 </div>
 
@@ -51,7 +52,7 @@
 {{NAV}}
       </ul>
     </nav>
-    <a class="btn btn-call header-call" href="{{PHONE_LINK}}"><span aria-hidden="true">📞</span> {{PHONE}}</a>
+    <a class="btn btn-call header-call" href="{{PHONE_LINK}}">{{ICON:phone}} {{PHONE}}</a>
   </div>
 </header>
 
@@ -59,6 +60,7 @@
 {{CONTENT}}
 </main>
 
+<div class="skyline-wrap">{{SVG:skyline}}</div>
 <section class="cta-band">
   <div class="wrap cta-band-in">
     <div>
@@ -66,7 +68,7 @@
       <p>Chiamaci: ti rispondono direttamente i nostri tecnici. Verona e provincia.</p>
     </div>
     <div class="cta-actions">
-      <a class="btn btn-accent btn-lg" href="{{PHONE_LINK}}">📞 Chiama {{PHONE}}</a>
+      <a class="btn btn-accent btn-lg" href="{{PHONE_LINK}}">{{ICON:phone}} Chiama {{PHONE}}</a>
       <a class="btn btn-ghost btn-lg" href="/contatti/#richiesta">Richiedi intervento</a>
     </div>
   </div>
@@ -107,8 +109,8 @@
 </footer>
 
 <nav class="mobile-bar" aria-label="Contatto rapido">
-  <a href="{{PHONE_LINK}}" class="mb-call">📞 Chiama ora</a>
-  <a href="/contatti/#richiesta" class="mb-req">Richiedi intervento</a>
+  <a href="{{PHONE_LINK}}" class="mb-call">{{ICON:phone}} Chiama ora</a>
+  <a href="/contatti/#richiesta" class="mb-req">{{ICON:calendar-check}} Richiedi intervento</a>
 </nav>
 
 <script src="/assets/main.js" defer></script>

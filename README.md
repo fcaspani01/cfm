@@ -40,6 +40,29 @@ Il sito adotta quello che funziona:
 | Palette verde petrolio + arancio fiamma | Richiamo al mondo Vaillant senza copiarne l'identità; l'arancio è usato solo per le call to action |
 | Nessun framework, nessun font esterno, ~15 KB di CSS | Caricamento quasi istantaneo, ottimi Core Web Vitals |
 
+### Identità visiva
+
+- **Illustrazioni originali in SVG** (`src/illustrations/`): caldaia stilizzata nell'apertura e
+  skyline di Verona (Arena, Torre dei Lamberti, Ponte Pietra, Castel San Pietro, cipressi).
+  Sono inserite direttamente nell'HTML, quindi pesano pochi KB e restano nitide su ogni schermo.
+- **Mappa delle zone** generata da `build.py` con le coordinate dei comuni in `SITE["areas"]`:
+  se si aggiunge un comune basta inserirne le coordinate in `COORDS`.
+- **Font dei titoli**: Bricolage Grotesque (licenza OFL), ospitato sul sito, senza chiamate a Google.
+- **Icone**: Lucide (licenza ISC), inserite con il segnaposto `{{ICON:nome}}`.
+- **Monogrammi C · F · M** con i nomi dei tre soci, al posto di foto generiche.
+
+### Foto: il passo che manca
+
+Non sono state usate foto stock: un tecnico o un furgone che non sono di CFM si riconoscono
+subito e riducono la fiducia invece di aumentarla. Le foto vere fanno la differenza, sul sito e
+sulla scheda Google. Le più utili, in ordine:
+1. i tre soci (insieme, anche in sede)
+2. un tecnico al lavoro su una caldaia Vaillant
+3. furgone con il logo, sede o insegna
+4. prima/dopo di una sostituzione caldaia
+
+Vanno bene foto da smartphone, in orizzontale e con buona luce.
+
 ## SEO locale e visibilità sugli LLM (GEO)
 
 Già implementato:

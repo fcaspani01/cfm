@@ -110,7 +110,92 @@ def tokens():
     }
 
 
+# Coordinate approssimate dei comuni, usate solo per disegnare la mappa schematica delle zone
+COORDS = {
+    "Verona": (45.4384, 10.9916), "San Giovanni Lupatoto": (45.3833, 11.0433),
+    "San Martino Buon Albergo": (45.4206, 11.0960), "Zevio": (45.3722, 11.1306),
+    "Castel d'Azzano": (45.3533, 10.9536), "Buttapietra": (45.3433, 10.9969),
+    "Vigasio": (45.3175, 10.9425), "Villafranca di Verona": (45.3540, 10.8447),
+    "Oppeano": (45.3047, 11.1792), "Isola della Scala": (45.2714, 10.9858),
+    "Povegliano Veronese": (45.3483, 10.8806), "Sommacampagna": (45.4053, 10.8467),
+    "Bussolengo": (45.4747, 10.8506), "Pescantina": (45.4847, 10.8681),
+    "Lavagno": (45.4378, 11.1336), "Caldiero": (45.4153, 11.1803),
+    "Belfiore": (45.3814, 11.2097), "Ronco all'Adige": (45.3369, 11.2436),
+    "Palù": (45.3247, 11.1556), "Grezzana": (45.5197, 11.0158),
+    "Negrar di Valpolicella": (45.5289, 10.9389),
+}
+# Corso dell'Adige semplificato (nord-ovest -> sud-est)
+ADIGE = [(45.53, 10.80), (45.50, 10.85), (45.485, 10.90), (45.465, 10.955), (45.448, 10.985),
+         (45.443, 11.005), (45.432, 11.012), (45.428, 11.035), (45.410, 11.060), (45.385, 11.085),
+         (45.368, 11.125), (45.350, 11.180), (45.330, 11.240), (45.315, 11.27)]
+# Etichette da mettere a sinistra del punto per evitare sovrapposizioni
+LEFT_LABELS = {"Villafranca di Verona", "Sommacampagna", "Bussolengo", "Povegliano Veronese",
+               "Negrar di Valpolicella", "Vigasio"}
+# Spostamenti verticali delle etichette troppo vicine
+LABEL_DY = {"San Martino Buon Albergo": -10, "Caldiero": 6, "Povegliano Veronese": 10,
+            "Villafranca di Verona": -6, "Castel d'Azzano": -10, "Belfiore": -6}
+
+
+def zone_map():
+    """Mappa SVG schematica: sede, comuni serviti, Adige e cerchi di distanza."""
+    # Proiezione adattata ai comuni in elenco, con margini per le etichette
+    pts = [COORDS[a] for a in SITE["areas"] if a in COORDS]
+    lat_min, lat_max = min(p[0] for p in pts), max(p[0] for p in pts)
+    lng_min, lng_max = min(p[1] for p in pts), max(p[1] for p in pts)
+    W, pad_l, pad_r, pad_y = 760, 180, 120, 40
+    k = (W - pad_l - pad_r) / ((lng_max - lng_min) * 0.70)
+    H = round((lat_max - lat_min) * k + 2 * pad_y)
+    proj = lambda lat, lng: (pad_l + (lng - lng_min) * k * 0.70, pad_y + (lat_max - lat) * k)
+    sx, sy = proj(*COORDS["San Giovanni Lupatoto"])
+    km = k / 111  # pixel per km (in verticale)
+    river = " ".join(f"{x:.0f},{y:.0f}" for x, y in (proj(*p) for p in ADIGE))
+    parts = [
+        f'<svg class="zone-map" viewBox="0 0 {W} {H}" role="img" '
+        f'aria-label="Mappa schematica dei comuni serviti attorno a San Giovanni Lupatoto e Verona">',
+        f'<rect width="{W}" height="{H}" rx="18" fill="var(--map-bg)"/>',
+    ]
+    for r, lbl in ((10, "10 km"), (20, "20 km")):
+        parts.append(f'<circle cx="{sx:.0f}" cy="{sy:.0f}" r="{r*km:.0f}" fill="none" stroke="var(--brand)" '
+                     f'stroke-opacity=".28" stroke-dasharray="6 6"/>')
+        parts.append(f'<text x="{sx + r*km*0.71 + 4:.0f}" y="{sy - r*km*0.71:.0f}" class="zm-km">{lbl}</text>')
+    parts.append(f'<polyline points="{river}" fill="none" stroke="#7cc3e0" stroke-width="7" '
+                 f'stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>')
+    rx, ry = proj(45.300, 11.21)
+    parts.append(f'<text x="{rx:.0f}" y="{ry + 22:.0f}" class="zm-river">fiume Adige</text>')
+    for name in SITE["areas"]:
+        if name not in COORDS or name == "San Giovanni Lupatoto":
+            continue
+        x, y = proj(*COORDS[name])
+        big = name == "Verona"
+        parts.append(f'<circle cx="{x:.0f}" cy="{y:.0f}" r="{9 if big else 5}" fill="var(--brand-2)"/>')
+        anchor, dx = ("end", -10) if name in LEFT_LABELS else ("start", 10)
+        dy = LABEL_DY.get(name, 0)
+        cls = "zm-city zm-big" if big else "zm-city"
+        parts.append(f'<text x="{x + dx:.0f}" y="{y + 4 + dy:.0f}" text-anchor="{anchor}" class="{cls}">'
+                     f'{html.escape(name)}</text>')
+    parts.append(f'<g transform="translate({sx:.0f},{sy:.0f})">'
+                 '<circle r="26" fill="var(--accent)" opacity=".18"/>'
+                 '<path d="M0 6c-7-8-12-13-12-19a12 12 0 0 1 24 0c0 6-5 11-12 19z" fill="var(--accent)"/>'
+                 '<circle cy="-13" r="4.5" fill="#fff"/></g>')
+    parts.append(f'<text x="{sx:.0f}" y="{sy - 34:.0f}" text-anchor="middle" class="zm-hq">CFM · San Giovanni Lupatoto</text>')
+    parts.append("</svg>")
+    return "".join(parts)
+
+
+def icon(name):
+    svg = (SRC / "icons" / f"{name}.svg").read_text(encoding="utf-8")
+    svg = re.sub(r"<!--.*?-->", "", svg, flags=re.S)
+    svg = re.sub(r'\s*class="[^"]*"', "", svg)
+    svg = svg.replace("<svg", '<svg class="ico" aria-hidden="true" focusable="false"', 1)
+    return re.sub(r"\s+", " ", svg).replace("> <", "><").strip()
+
+
 def fill(text):
+    text = re.sub(r"\{\{ICON:([a-z-]+)\}\}", lambda m: icon(m.group(1)), text)
+    text = re.sub(r"\{\{SVG:([a-z-]+)\}\}",
+                  lambda m: (SRC / "illustrations" / f"{m.group(1)}.svg").read_text(encoding="utf-8").strip(), text)
+    if "{{ZONE_MAP}}" in text:
+        text = text.replace("{{ZONE_MAP}}", zone_map())
     for k, v in tokens().items():
         text = text.replace("{{" + k + "}}", v)
     return text
