@@ -1,0 +1,67 @@
+<!--meta {
+  "path": "/contatti/",
+  "title": "Contatti | CFM Assistenza Caldaie Vaillant Verona – Tel. 045 875 1000",
+  "description": "Contatta CFM, centro assistenza caldaie Vaillant a San Giovanni Lupatoto (VR): telefono 045 875 1000, email, indirizzo, orari e modulo di richiesta intervento.",
+  "h1": "Contatti",
+  "crumb": "Contatti",
+  "priority": "0.8"
+} -->
+<section class="page-hero">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Percorso"><a href="/">Home</a> › Contatti</nav>
+    <h1>Contatti</h1>
+    <p>Il modo più rapido per fissare un intervento è chiamarci. Puoi anche inviarci una richiesta: ti ricontattiamo noi.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact-grid">
+    <div class="contact-box">
+      <h2>CFM Assistenza Caldaie</h2>
+      <p>Telefono</p>
+      <a class="big-phone" href="{{PHONE_LINK}}">{{PHONE}}</a>
+      <address>
+        <strong>{{LEGAL_NAME}}</strong><br>
+        {{STREET}}<br>
+        {{POSTAL_CODE}} {{CITY}} ({{PROVINCE}})<br>
+        Email: <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+      </address>
+      <h3 style="margin-top:18px">Orari</h3>
+      <p>{{HOURS}}<br>{{HOURS_CLOSED}}: chiuso</p>
+      <p><a class="btn btn-outline" href="{{MAPS_URL}}" target="_blank" rel="noopener">Indicazioni stradali</a></p>
+    </div>
+
+    <div class="contact-box" id="richiesta">
+      <h2>Richiedi un intervento</h2>
+      <form id="richiesta-form" data-email="{{EMAIL}}" action="mailto:{{EMAIL}}" method="post" enctype="text/plain">
+        <div class="row two">
+          <div><label for="nome">Nome e cognome</label><input id="nome" name="nome" required autocomplete="name"></div>
+          <div><label for="telefono">Telefono</label><input id="telefono" name="telefono" type="tel" required autocomplete="tel"></div>
+        </div>
+        <div class="row two" style="margin-top:14px">
+          <div><label for="comune">Comune</label><input id="comune" name="comune" required autocomplete="address-level2" placeholder="es. Verona"></div>
+          <div>
+            <label for="tipo">Tipo di richiesta</label>
+            <select id="tipo" name="tipo">
+              <option>Manutenzione / controllo fumi</option>
+              <option>Riparazione guasto</option>
+              <option>Sostituzione caldaia</option>
+              <option>Altro</option>
+            </select>
+          </div>
+        </div>
+        <div class="row" style="margin-top:14px">
+          <div><label for="modello">Modello caldaia e codice errore (se presente)</label><input id="modello" name="modello" placeholder="es. Vaillant ecoTEC plus – F.28"></div>
+          <div><label for="messaggio">Messaggio</label><textarea id="messaggio" name="messaggio"></textarea></div>
+          <label class="check"><input type="checkbox" required> Ho letto l'<a href="/privacy/">informativa privacy</a> e acconsento al trattamento dei dati per essere ricontattato.</label>
+          <button class="btn btn-accent btn-lg" type="submit">Invia richiesta</button>
+          <p id="form-ok" class="small" hidden>Si è aperto il tuo programma di posta con la richiesta già compilata: premi Invia. Se non si apre, chiamaci al {{PHONE}}.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:28px">
+    <iframe class="map" title="Mappa: CFM, {{ADDRESS}}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps?q=Via+Cesare+Battisti+58,+37057+San+Giovanni+Lupatoto+VR&amp;output=embed"></iframe>
+  </div>
+</section>

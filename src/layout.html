@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESCRIPTION}}">
+<meta name="robots" content="{{ROBOTS}}">
+<link rel="canonical" href="{{CANONICAL}}">
+<meta name="theme-color" content="#0b4f49">
+<meta name="geo.region" content="IT-VR">
+<meta name="geo.placename" content="San Giovanni Lupatoto, Verona">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="{{NAME}}">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:url" content="{{CANONICAL}}">
+<meta property="og:image" content="{{SITE_URL}}/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="alternate" type="text/plain" href="/llms.txt" title="LLM summary">
+<link rel="stylesheet" href="/assets/styles.css">
+{{JSONLD}}
+</head>
+<body>
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<div class="topbar">
+  <div class="wrap topbar-in">
+    <span>📍 {{ADDRESS}}</span>
+    <span class="hide-sm">🕑 {{HOURS}}</span>
+    <a href="mailto:{{EMAIL}}" class="hide-sm">✉ {{EMAIL}}</a>
+  </div>
+</div>
+
+<header class="header">
+  <div class="wrap header-in">
+    <a class="brand" href="/" aria-label="CFM Assistenza Caldaie – Home">
+      <img src="/assets/logo.svg" alt="" width="44" height="44">
+      <span class="brand-txt"><strong>CFM</strong><small>Assistenza Caldaie Vaillant · Verona</small></span>
+    </a>
+    <nav class="nav" aria-label="Menu principale">
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-burger" aria-label="Apri o chiudi il menu"><span></span><span></span><span></span></label>
+      <ul class="nav-list">
+{{NAV}}
+      </ul>
+    </nav>
+    <a class="btn btn-call header-call" href="{{PHONE_LINK}}"><span aria-hidden="true">📞</span> {{PHONE}}</a>
+  </div>
+</header>
+
+<main id="main">
+{{CONTENT}}
+</main>
+
+<section class="cta-band">
+  <div class="wrap cta-band-in">
+    <div>
+      <h2>Caldaia ferma o manutenzione in scadenza?</h2>
+      <p>Chiamaci: ti rispondono direttamente i nostri tecnici. Verona e provincia.</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-accent btn-lg" href="{{PHONE_LINK}}">📞 Chiama {{PHONE}}</a>
+      <a class="btn btn-ghost btn-lg" href="/contatti/#richiesta">Richiedi intervento</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-brand"><img src="/assets/logo.svg" alt="" width="36" height="36"> CFM Assistenza Caldaie</p>
+      <p>Centro assistenza caldaie specializzato <strong>Vaillant</strong> a San Giovanni Lupatoto (Verona). Oltre {{YEARS}} anni di esperienza.</p>
+    </div>
+    <div itemscope itemtype="https://schema.org/PostalAddress">
+      <h3>Dove siamo</h3>
+      <address>
+        <span itemprop="streetAddress">{{STREET}}</span><br>
+        <span itemprop="postalCode">{{POSTAL_CODE}}</span> <span itemprop="addressLocality">{{CITY}}</span> (<span itemprop="addressRegion">{{PROVINCE}}</span>)<br>
+        Tel. <a href="{{PHONE_LINK}}">{{PHONE}}</a><br>
+        <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+      </address>
+      <p><a href="{{MAPS_URL}}" rel="noopener" target="_blank">Indicazioni stradali →</a></p>
+    </div>
+    <div>
+      <h3>Orari</h3>
+      <p>{{HOURS}}<br>{{HOURS_CLOSED}}: chiuso</p>
+      <h3>Servizi</h3>
+      <ul class="footer-links">
+        <li><a href="/assistenza-caldaie-vaillant-verona/">Assistenza caldaie Vaillant</a></li>
+        <li><a href="/manutenzione-caldaia-verona/">Manutenzione e controllo fumi</a></li>
+        <li><a href="/riparazione-caldaie-verona/">Riparazione caldaie</a></li>
+        <li><a href="/sostituzione-caldaia-verona/">Sostituzione caldaia</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-legal">
+    <p>© {{YEAR}} {{LEGAL_NAME}} · P.IVA {{VAT}} · <a href="/privacy/">Privacy</a> · <a href="/llms.txt">llms.txt</a></p>
+    <p class="small">Vaillant è un marchio registrato di Vaillant GmbH. Il marchio è citato per indicare la specializzazione del centro assistenza.</p>
+  </div>
+</footer>
+
+<nav class="mobile-bar" aria-label="Contatto rapido">
+  <a href="{{PHONE_LINK}}" class="mb-call">📞 Chiama ora</a>
+  <a href="/contatti/#richiesta" class="mb-req">Richiedi intervento</a>
+</nav>
+
+<script src="/assets/main.js" defer></script>
+</body>
+</html>
