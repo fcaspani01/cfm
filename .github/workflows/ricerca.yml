@@ -12,13 +12,13 @@ permissions:
 jobs:
   research:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install -q playwright requests pillow && python -m playwright install --with-deps chromium >/dev/null
+      - run: pip install -q playwright requests pillow
       - run: rm -rf research/out && python research/run.py
       - name: Salva risultati
         run: |

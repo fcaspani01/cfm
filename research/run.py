@@ -29,7 +29,7 @@ for url in cfg.get("discover", []):
 # 2. Screenshot dei siti
 from playwright.sync_api import sync_playwright
 with sync_playwright() as p:
-    b = p.chromium.launch()
+    b = p.chromium.launch(channel="chrome")  # Chrome preinstallato sul runner
     for i, url in enumerate(cfg.get("screens", [])):
         slug = re.sub(r"[^a-z0-9]+", "-", url.lower().split("//")[1]).strip("-")[:50]
         for name, vp in (("desk", {"width": 1366, "height": 860}), ("mob", {"width": 390, "height": 844})):
