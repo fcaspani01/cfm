@@ -1,0 +1,38 @@
+screen https://www.bulldogairnc.com/ desk: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.bulldogairnc.com/
+Call log:
+  - navigating to "https://www.bulldogairnc.com/", waiting until "domcontentloaded"
+
+screen https://www.bulldogairnc.com/ mob: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.bulldogairnc.com/
+Call log:
+  - navigating to "https://www.bulldogairnc.com/", waiting until "domcontentloaded"
+
+screen https://www.hamiltonsvc.com/ desk: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.hamiltonsvc.com/
+Call log:
+  - navigating to "https://www.hamiltonsvc.com/", waiting until "domcontentloaded"
+
+screen https://www.hamiltonsvc.com/ mob: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.hamiltonsvc.com/
+Call log:
+  - navigating to "https://www.hamiltonsvc.com/", waiting until "domcontentloaded"
+
+img wall mounted gas boiler openverse: HTTPSConnectionPool(host='api.openverse.org', port=443): Read timed out. (read timeout=30)
+thumb https://upload.wikimedia.org/wikipedia/commons/d/da/Chaudiere_murale_gaz.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled: cannot identify image file <_io.BytesIO object at 0x7f272a853290>
+thumb https://upload.wikimedia.org/wikipedia/commons/f/f4/Wall-mounted_boiler_Junkers_Novatherm_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled: cannot identify image file <_io.BytesIO object at 0x7f272a8791c0>
+thumb https://upload.wikimedia.org/wikipedia/commons/f/fa/Wall-mounted_boiler_Junkers_Novatherm_2.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled: cannot identify image file <_io.BytesIO object at 0x7f272a853290>
+img gas boiler maintenance openverse: HTTPSConnectionPool(host='api.openverse.org', port=443): Read timed out. (read timeout=30)
+thumb https://upload.wikimedia.org/wikipedia/commons/3/35/Belgische_Franco-Crosti-Lokomotive_f%C3%BCr_Deutschland%2C_vordere_Sektion.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled: cannot identify image file <_io.BytesIO object at 0x7f2728267fb0>
+img Vaillant boiler openverse: HTTPSConnectionPool(host='api.openverse.org', port=443): Read timed out. (read timeout=30)
+img heating engineer openverse: HTTPSConnectionPool(host='api.openverse.org', port=443): Read timed out. (read timeout=30)
+img radiator thermostat openverse: HTTPSConnectionPool(host='api.openverse.org', port=443): Read timed out. (read timeout=30)
+thumb https://api.openverse.org/v1/images/b719f92f-4c1e-4502-959f-e86505a34d4d/thumb/: cannot identify image file <_io.BytesIO object at 0x7f272b0fe840>
+thumb https://api.openverse.org/v1/images/ff0fd616-285f-4a46-8373-e42ce5b59b7e/thumb/: HTTPSConnectionPool(host='api.openverse.org', port=443): Read timed out. (read timeout=30)
+img gas flame burner openverse: HTTPSConnectionPool(host='api.openverse.org', port=443): Read timed out. (read timeout=30)
+thumb https://upload.wikimedia.org/wikipedia/commons/0/0f/Lit_burner_of_a_gas-fueled_stovetop.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled: cannot identify image file <_io.BytesIO object at 0x7f272b0fe840>
+thumb https://api.openverse.org/v1/images/23cfe3b5-b8de-438c-9654-8e89ada4478a/thumb/: HTTPSConnectionPool(host='api.openverse.org', port=443): Read timed out. (read timeout=30)
+thumb https://api.openverse.org/v1/images/a1f8973e-faff-42d2-8b85-7d53e6387df7/thumb/: cannot identify image file <_io.BytesIO object at 0x7f2728267f60>
+thumb https://api.openverse.org/v1/images/c6626599-f47b-4bd9-9c23-38bfe04b55cf/thumb/: HTTPSConnectionPool(host='api.openverse.org', port=443): Read timed out. (read timeout=30)
+thumb https://api.openverse.org/v1/images/0b9f78ef-5a94-4dc1-b3a7-1ef6b1588dcf/thumb/: HTTPSConnectionPool(host='api.openverse.org', port=443): Read timed out. (read timeout=30)
+thumb https://api.openverse.org/v1/images/d81f9515-2c5e-40ae-a38d-40d6e7b7dfd8/thumb/: HTTPSConnectionPool(host='api.openverse.org', port=443): Read timed out. (read timeout=30)
+img Verona rooftops openverse: HTTPSConnectionPool(host='api.openverse.org', port=443): Read timed out. (read timeout=30)
+img Verona winter openverse: HTTPSConnectionPool(host='api.openverse.org', port=443): Read timed out. (read timeout=30)
+thumb https://api.openverse.org/v1/images/0aa7e2a1-21fa-45ab-8643-1dde09defa22/thumb/: cannot identify image file <_io.BytesIO object at 0x7f272a853b50>
+img Piazza delle Erbe Verona openverse: HTTPSConnectionPool(host='api.openverse.org', port=443): Read timed out. (read timeout=30)
