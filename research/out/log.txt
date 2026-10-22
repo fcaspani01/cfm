@@ -1,3 +1,3 @@
-fetch verona-ponte-pietra: cannot identify image file <_io.BytesIO object at 0x7f0912afaf20> 429
-fetch verona-tetti: cannot identify image file <_io.BytesIO object at 0x7f09129497b0> 429
-fetch verona-torri: cannot identify image file <_io.BytesIO object at 0x7f0912afbfb0> 429
+fetch verona-ponte-pietra: cannot identify image file <_io.BytesIO object at 0x7f592ea168e0> 400
+fetch verona-tetti: cannot identify image file <_io.BytesIO object at 0x7f592ea15620> 400
+fetch verona-torri: cannot identify image file <_io.BytesIO object at 0x7f592ea14d60> 400
