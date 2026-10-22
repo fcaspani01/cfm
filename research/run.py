@@ -120,7 +120,11 @@ if sel:
 for it in cfg.get("fetch", []):
     dl = OUT / "selected"; dl.mkdir(exist_ok=True)
     try:
-        r = requests.get(it["url"], headers=UA, timeout=120)
+        bot = {"User-Agent": "CFM-site-builder/1.0 (https://github.com/fcaspani01/cfm; design research)"}
+        for attempt in range(5):
+            r = requests.get(it["url"], headers=bot, timeout=120)
+            if r.status_code == 200: break
+            time.sleep(15 * (attempt + 1))
         im = Image.open(__import__("io").BytesIO(r.content)).convert("RGB")
         im.thumbnail((2400, 2400))
         im.save(dl / f"{it['name']}.jpg", quality=84)
