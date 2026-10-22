@@ -116,5 +116,17 @@ if sel:
         except Exception as e:
             log.append(f"download {s}: {e}")
 
+# 5. Download diretto di immagini scelte (URL noti)
+for it in cfg.get("fetch", []):
+    dl = OUT / "selected"; dl.mkdir(exist_ok=True)
+    try:
+        r = requests.get(it["url"], headers=UA, timeout=120)
+        im = Image.open(__import__("io").BytesIO(r.content)).convert("RGB")
+        im.thumbnail((2400, 2400))
+        im.save(dl / f"{it['name']}.jpg", quality=84)
+        (dl / f"{it['name']}.json").write_text(json.dumps(it, indent=1, ensure_ascii=False))
+    except Exception as e:
+        log.append(f"fetch {it['name']}: {e} {r.status_code if 'r' in dir() else ''}")
+
 (OUT / "log.txt").write_text("\n".join(log))
 print("\n".join(log))

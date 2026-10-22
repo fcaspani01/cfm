@@ -1,23 +1,30 @@
 {
-  "discover": [
-    "https://freshysites.com/web-design-development/top-hvac-repair-websites/",
-    "https://www.simprogroup.com/blog/hvac-websites",
-    "https://colorlib.com/wp/hvac-company-website-examples/",
-    "https://isotropic.co/hvac-website-inspiration/",
-    "https://www.virgilio.it/italia/san-giovanni-lupatoto/cat/CALDAIE_RISCALDAMENTO.html",
-    "https://www.virgilio.it/italia/verona/cat/CALDAIE_RISCALDAMENTO.html",
-    "https://www.paginegialle.it/ricerca/assistenza%20caldaie%20vaillant/Verona"
-  ],
-  "screens": [
-    "https://www.vaillant.it/",
-    "https://www.vaillant.it/privati/",
-    "https://www.bulldogairnc.com/",
-    "https://www.hamiltonsvc.com/"
-  ],
-  "images": [
-    "wall mounted gas boiler", "gas boiler maintenance", "boiler repair technician",
-    "Vaillant boiler", "heating engineer", "radiator thermostat", "underfloor heating",
-    "copper pipes heating", "gas flame burner", "Arena di Verona", "Ponte Pietra Verona",
-    "Verona rooftops", "Verona winter", "Verona chimneys roofs", "Piazza delle Erbe Verona"
-  ]
+ "discover": [],
+ "screens": [
+  "https://morrisjenkins.com/",
+  "https://www.happyhiller.com/",
+  "https://kalosflorida.com/",
+  "https://callthelen.com/"
+ ],
+ "images": [],
+ "fetch": [
+  {
+   "name": "verona-ponte-pietra",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Ponte_Pietra_and_riverside_buildings%2C_Verona_-_2026-09-12.jpg",
+   "credit": "NorbertNagel, CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Ponte_Pietra_and_riverside_buildings,_Verona_-_2026-09-12.jpg"
+  },
+  {
+   "name": "verona-tetti",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Sant_Anastasia_and_Verona_rooftops_from_the_hillside_-_2026-09-12_-_01.jpg",
+   "credit": "NorbertNagel, CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:Sant_Anastasia_and_Verona_rooftops_from_the_hillside_-_2026-09-12_-_01.jpg"
+  },
+  {
+   "name": "verona-torri",
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/The_Chorus_of_Towers.jpg",
+   "credit": "Eleneru, CC BY-SA 4.0",
+   "page": "https://commons.wikimedia.org/wiki/File:The_Chorus_of_Towers.jpg"
+  }
+ ]
 }
