@@ -45,6 +45,10 @@ Il sito adotta quello che funziona:
 - **Illustrazioni originali in SVG** (`src/illustrations/`): caldaia stilizzata nell'apertura e
   skyline di Verona (Arena, Torre dei Lamberti, Ponte Pietra, Castel San Pietro, cipressi).
   Sono inserite direttamente nell'HTML, quindi pesano pochi KB e restano nitide su ogni schermo.
+- **Set di illustrazioni isometriche** (`src/illustrations/scene-*.svg`): casa, manutenzione,
+  riparazione, sostituzione, zone servite, laboratorio. Sono generate da `tools/illustrazioni.py`
+  (motore in `tools/iso.py`): per modificarle si cambia lo script e si lancia
+  `python3 tools/illustrazioni.py`, poi `python3 build.py`.
 - **Mappa delle zone** generata da `build.py` con le coordinate dei comuni in `SITE["areas"]`:
   se si aggiunge un comune basta inserirne le coordinate in `COORDS`.
 - **Font dei titoli**: Bricolage Grotesque (licenza OFL), ospitato sul sito, senza chiamate a Google.

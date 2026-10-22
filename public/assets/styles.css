@@ -157,6 +157,22 @@ p { margin: 0 0 1em; }
 .crumbs { font-size: .85rem; margin-bottom: 12px; color: #a9d3cb; }
 .crumbs a { color: #cfeee8; }
 
+/* Illustrazioni isometriche */
+.iso-illu { width: 100%; height: auto; display: block; }
+.page-hero.has-art { padding-bottom: 8px; }
+.page-hero-grid { display: grid; gap: 8px; align-items: center; }
+.page-art { max-width: 300px; width: 100%; margin: 0 auto; }
+.home-art { max-width: 560px; margin: 0 auto; width: 100%; }
+.iso-illu .iso-glow, .iso-illu .iso-flame, .iso-illu .iso-wave, .iso-illu .iso-blink, .iso-illu .iso-float { transform-box: fill-box; }
+.iso-glow { transform-origin: center; animation: hi-pulse 3.2s ease-in-out infinite; }
+.iso-flame { transform-origin: 50% 100%; animation: hi-flicker 1.4s ease-in-out infinite; }
+.iso-wave { animation: hi-rise 2.4s ease-in infinite; }
+.iso-flow { animation: hi-flow 1.2s linear infinite; }
+.iso-blink { transform-origin: 50% 100%; animation: iso-blink 1.6s ease-in-out infinite; }
+.iso-float { animation: hi-float 3s ease-in-out infinite; }
+@keyframes iso-blink { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.12); opacity: .75; } }
+@media (prefers-reduced-motion: reduce) { .iso-illu * { animation: none !important; } }
+
 /* Trust strip */
 .trust { background: var(--bg-alt); border-bottom: 1px solid var(--line); }
 .trust-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; padding: 22px 16px; }
@@ -306,6 +322,9 @@ textarea { min-height: 120px; resize: vertical; }
   .hide-sm { display: inline; }
 }
 @media (min-width: 960px) {
+  .page-hero-grid { grid-template-columns: 1.15fr 1fr; gap: 40px; }
+  .page-art { max-width: 430px; }
+  .page-hero.has-art { padding: 20px 0 12px; }
   body { padding-bottom: 0; }
   .mobile-bar { display: none; }
   .header .header-call { display: inline-flex; }
