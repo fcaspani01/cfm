@@ -72,12 +72,17 @@ NAV = [
 
 # Sottopercorso del sito (es. "/cfm" su GitHub Pages), ricavato dall'URL
 BASE = urlparse(SITE["url"]).path.rstrip("/")
+SRCSET_RE = re.compile(r'srcset="([^"]*)"')
 ROOT_LINK_RE = re.compile(r'((?:href|src|action)=")/(?!/)')
 
 
 def with_base(text):
     """Antepone BASE ai link che iniziano con "/" (no-op se il sito è alla radice del dominio)."""
-    return ROOT_LINK_RE.sub(lambda m: m.group(1) + BASE + "/", text) if BASE else text
+    if not BASE:
+        return text
+    text = ROOT_LINK_RE.sub(lambda m: m.group(1) + BASE + "/", text)
+    # srcset: elenco "url larghezza, url larghezza"
+    return SRCSET_RE.sub(lambda m: 'srcset="' + re.sub(r"(^|,\s*)/(?!/)", lambda n: n.group(1) + BASE + "/", m.group(1)) + '"', text)
 
 
 META_RE = re.compile(r"^\s*<!--meta\s*(\{.*?\})\s*-->", re.S)
