@@ -1,0 +1,12 @@
+{
+  "name": "CFM Assistenza Caldaie Vaillant Verona",
+  "short_name": "CFM Caldaie",
+  "start_url": "/cfm/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0b4f49",
+  "icons": [
+    { "src": "/cfm/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/cfm/assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
